@@ -1,0 +1,85 @@
+ *{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+  
+} 
+.navbar{
+    height: 80px;
+    background-color: #0f1111;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-logo{
+    height: 50px;
+    width: 113px;
+}
+.logo{
+ background-image: url("https://www.shutterstock.com/image-vector/amazon-logo-editorial-icon-isolated-600nw-2313339121.jpg");
+ background-size: cover;
+ height:55px;
+ width:150%;
+}
+.border{
+    border: 1.5px solid transparent;
+}
+.border:hover{
+    border: 1.5px solid white;
+}
+.delivery{
+    margin-left: 18px;
+}
+.locationa{
+    color: #cccc;
+    font-size: 0.85rem;
+     margin-left: 5rem;
+}
+.locationa1{
+    color: aliceblue;
+    font-size: 1rem;
+}
+.LOCATIONLOGO{
+   color: aliceblue;
+   font-size: larger;
+   display: flex;
+   align-items:center ;
+}
+.navsearch{
+    margin-left: 5px;
+    display: flex;
+    width: 620px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 3px;
+    justify-content: space-evenly;
+}
+.searchbar{
+    width: 90%;
+    font-size: 1rem;
+    border: none;
+
+}
+.selection{
+    text-align: center;
+    background-color: rgb(224, 224, 224);
+    font-size: 1rem;
+    width: 10%;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border: none; 
+}
+.searchbutton{
+    width: 7%;
+    background-color: rgb(234, 190, 47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+.span{
+    
+}
+.navsignin{
+   color: aliceblue;
+}

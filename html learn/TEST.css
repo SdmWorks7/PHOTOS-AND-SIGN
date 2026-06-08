@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#logo{
+    color: #d4a116;
+    font-size: 25px;
+    margin-left: 2%;
+}
+#content{
+
+    height: 680px;
+    
+}
+.box{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    background-color: #d4a116;
+}
+form{
+    display: inline;
+}
+a{
+    margin-right: 200px;
+    text-decoration: none;
+    color: aliceblue;
+}
+header{
+
+    color: aliceblue;
+    height: 60px;
+    background-color: #0f1111;
+}
+button{
+    background-color: #d4a116;
+}
+footer{
+    background-color: #0f1111;
+    text-align: center;
+    color: aliceblue;
+}

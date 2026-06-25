@@ -31,9 +31,24 @@ def remove_user(user_id:int):
     user=db.query(User).filter(User.id==user_id).first()
     if user is None:
         db.close()
-        return {"message":"user not found"}
+        return {"error":"user not found"}
     db.delete(user)
     db.commit()
     db.close()
     return {"message":"user deleted successfully!"}
+
+@app.put("/users/{user_id}")
+def update_user(user_id: int, updated_user: UserInput):
+    db=SessionLocal()
+    user=db.query(User).filter(User.id==user_id).first()
+    if user is None:
+        db.close()
+        return {"error":"user not found"}
+    user.name = updated_user.name
+    user.age = updated_user.age
+    user.city = updated_user.city
+    db.commit()
+    db.close()
+    return {"message":"user updated successfully!"}
+    
     

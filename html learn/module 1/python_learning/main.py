@@ -24,3 +24,16 @@ def create_user(user: UserInput):
     db.commit()
     db.close()
     return {"message": "User created!"}
+
+@app.delete("/users/{user_id}")
+def remove_user(user_id:int):
+    db=SessionLocal()
+    user=db.query(User).filter(User.id==user_id).first()
+    if user is None:
+        db.close()
+        return {"message":"user not found"}
+    db.delete(user)
+    db.commit()
+    db.close()
+    return {"message":"user deleted successfully!"}
+    

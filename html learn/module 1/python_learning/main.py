@@ -1,32 +1,20 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app=FastAPI()
 
-@app.get("/")
-def home():
-    return {"message":"Hello World!"}
+class Users(BaseModel):
+    name:str
+    age:int
+    city:str
 
-@app.get("/greet/{name}")
-def greet(name:str):
-    return {"message":f"Hello {name}"}
+users = []
 
 @app.get("/users")
 def get_users():
-    users = [
-        {"id": 1, "name": "Saumyadeep", "city": "Jamshedpur"},
-        {"id": 2, "name": "Rahul", "city": "Mumbai"},
-        {"id": 3, "name": "Priya", "city": "Delhi"}
-    ]
     return {"users": users}
 
-@app.get("/users/{user_id}")
-def get_user(user_id: int):
-    users = [
-        {"id": 1, "name": "Saumyadeep", "city": "Jamshedpur"},
-        {"id": 2, "name": "Rahul", "city": "Mumbai"},
-        {"id": 3, "name": "Priya", "city": "Delhi"}
-    ]
-    for user in users:
-        if user["id"] == user_id:
-            return {"user": user}
-    return {"error": "User not found"}
+@app.post("/users")
+def create_users(user:Users):
+    users.append(user)
+    return {"message":"user created succesfully","user":user}
